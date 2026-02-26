@@ -1,0 +1,63 @@
+{
+  "validUsers": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "age": 30,
+      "phone": "1234567890",
+      "address": "123 Main St, City"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "age": 28,
+      "phone": "9876543210",
+      "address": "456 Oak Ave, Town"
+    },
+    {
+      "id": 3,
+      "name": "John Miller",
+      "email": "john.miller@example.com",
+      "age": 35,
+      "phone": "5555555555",
+      "address": "789 Pine Rd, Village"
+    }
+  ],
+  "invalidEmails": [
+    "invalidemail",
+    "user@",
+    "@example.com",
+    "user@.com",
+    "user@example",
+    "user name@example.com",
+    "user@@example.com"
+  ],
+  "updatedUsers": [
+    {
+      "name": "Jane Updated",
+      "email": "jane.updated@example.com",
+      "age": 29
+    },
+    {
+      "name": "John Updated",
+      "email": "john.updated@example.com",
+      "age": 31
+    }
+  ],
+  "searchTerms": [
+    {
+      "term": "John",
+      "expectedCount": 2
+    },
+    {
+      "term": "Jane",
+      "expectedCount": 1
+    },
+    {
+      "term": "Smith",
+      "expectedCount": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "demoapi-mock-server",
+  "version": "1.0.0",
+  "description": "Mock API Server for DemoAPI Testing",
+  "main": "mock-server.js",
+  "scripts": {
+    "start": "node mock-server.js",
+    "dev": "npm install && npm start"
+  },
+  "keywords": [
+    "api",
+    "mock",
+    "testing",
+    "rest"
+  ],
+  "author": "DemoAPI",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
