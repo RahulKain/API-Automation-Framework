@@ -115,25 +115,6 @@ public class UserSteps {
         userPage.searchUserByName(name);
     }
 
-    @Then("the response status code should be {int}")
-    public void verifyResponseStatusCode(Integer statusCode) {
-        LoggerUtil.info("Verifying response status code: " + statusCode);
-        userPage.verifyStatusCode(statusCode);
-    }
-
-    @Then("the response should contain a list of users")
-    public void verifyResponseContainsUserList() {
-        LoggerUtil.info("Verifying response contains list of users");
-        userPage.verifyResponseIsJson();
-        userPage.verifyResponseNotEmpty();
-    }
-
-    @Then("the response should not be empty")
-    public void verifyResponseNotEmpty() {
-        LoggerUtil.info("Verifying response is not empty");
-        userPage.verifyResponseNotEmpty();
-    }
-
     @Then("the response should contain user with id {int}")
     public void verifyResponseContainsUserId(Integer userId) {
         LoggerUtil.info("Verifying response contains user with ID: " + userId);
@@ -202,12 +183,6 @@ public class UserSteps {
         userPage.verifyResponseTime(maxTimeInMs);
     }
 
-    @Then("the response should be in JSON format")
-    public void verifyResponseIsJSON() {
-        LoggerUtil.info("Verifying response is in JSON format");
-        userPage.verifyResponseIsJson();
-    }
-
     @Then("all users in response should have {string} in name")
     public void verifyAllUsersHaveNameInResponse(String nameFilter) {
         LoggerUtil.info("Verifying all users contain name: " + nameFilter);
@@ -217,5 +192,30 @@ public class UserSteps {
             assertThat("User name should contain: " + nameFilter, 
                     user.getName(), containsStringIgnoringCase(nameFilter));
         }
+    }
+
+    // Shared verification steps
+    @Then("the response status code should be {int}")
+    public void verifyResponseStatusCode(Integer statusCode) {
+        LoggerUtil.info("Verifying response status code: " + statusCode);
+        userPage.verifyStatusCode(statusCode);
+    }
+
+    @Then("the response should not be empty")
+    public void verifyResponseNotEmpty() {
+        LoggerUtil.info("Verifying response is not empty");
+        userPage.verifyResponseNotEmpty();
+    }
+
+    @Then("the response should be in JSON format")
+    public void verifyResponseIsJSON() {
+        LoggerUtil.info("Verifying response is in JSON format");
+        userPage.verifyResponseIsJson();
+    }
+
+    @Then("the response should contain a list of users")
+    public void verifyResponseContainsListOfUsers() {
+        LoggerUtil.info("Verifying response contains list of users");
+        userPage.verifyResponseIsArray();
     }
 }

@@ -147,4 +147,15 @@ public abstract class BasePage {
         LoggerUtil.info("Response Time: " + getResponseTime() + "ms");
         LoggerUtil.info("Response Body: " + getResponseBody());
     }
+
+    /**
+     * Verify response is an array
+     */
+    public void verifyResponseIsArray() {
+        LoggerUtil.info("Verifying response is an array");
+        String body = getResponseBody();
+        assert body.trim().startsWith("[") && body.trim().endsWith("]") : 
+            "Response body is not a JSON array";
+        LoggerUtil.info("Response is a valid JSON array");
+    }
 }
